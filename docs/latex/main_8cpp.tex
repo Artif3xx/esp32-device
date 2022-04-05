@@ -1,0 +1,138 @@
+\hypertarget{main_8cpp}{}\doxysection{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$SPI.\+h$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$Wi\+Fi.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+GFX.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+SSD1306.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}n\+RF24\+L01.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}RF24.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a2cd109632a6dcccaa80b43561b1ab700}\label{main_8cpp_a2cd109632a6dcccaa80b43561b1ab700}} 
+\#define {\bfseries SCREEN\+\_\+\+WIDTH}~128
+\item 
+\mbox{\Hypertarget{main_8cpp_a6974d08a74da681b3957b2fead2608b8}\label{main_8cpp_a6974d08a74da681b3957b2fead2608b8}} 
+\#define {\bfseries SCREEN\+\_\+\+HEIGHT}~64
+\item 
+\mbox{\Hypertarget{main_8cpp_a619e07239fb3b9b14d40646ab41d5b4f}\label{main_8cpp_a619e07239fb3b9b14d40646ab41d5b4f}} 
+\#define {\bfseries OLED\+\_\+\+RESET}~-\/1
+\item 
+\mbox{\Hypertarget{main_8cpp_a4dc358585abdaa9531e340bab60ae0b5}\label{main_8cpp_a4dc358585abdaa9531e340bab60ae0b5}} 
+\#define {\bfseries SCREEN\+\_\+\+ADDRESS}~0x3C
+\item 
+\mbox{\Hypertarget{main_8cpp_abb388c9dfbdca89b280a12c4af1a030f}\label{main_8cpp_abb388c9dfbdca89b280a12c4af1a030f}} 
+\#define {\bfseries CE\+\_\+\+PIN}~4
+\item 
+\mbox{\Hypertarget{main_8cpp_abfcf05153ddbd63d5aff5d018867cc19}\label{main_8cpp_abfcf05153ddbd63d5aff5d018867cc19}} 
+\#define {\bfseries CS\+\_\+\+PIN}~5
+\item 
+\mbox{\Hypertarget{main_8cpp_a31e20330f8ce94e0dd10b005a15c5898}\label{main_8cpp_a31e20330f8ce94e0dd10b005a15c5898}} 
+\#define {\bfseries LED\+\_\+\+RED}~2
+\item 
+\mbox{\Hypertarget{main_8cpp_aca338dbd19d7940923334629f6e5f3b7}\label{main_8cpp_aca338dbd19d7940923334629f6e5f3b7}} 
+\#define {\bfseries LED\+\_\+\+GREEN}~15
+\item 
+\mbox{\Hypertarget{main_8cpp_a40f496979bb9d7199cca5e0ce136e698}\label{main_8cpp_a40f496979bb9d7199cca5e0ce136e698}} 
+\#define {\bfseries CLK\+\_\+\+PIN}~20
+\item 
+\mbox{\Hypertarget{main_8cpp_abe593e472a857d7c47d43c8cd331fefb}\label{main_8cpp_abe593e472a857d7c47d43c8cd331fefb}} 
+\#define {\bfseries DT\+\_\+\+PIN}~21
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_ae780a76d06cb56e14435ebfe3db3f6d3}\label{main_8cpp_ae780a76d06cb56e14435ebfe3db3f6d3}} 
+Adafruit\+\_\+\+SSD1306 {\bfseries display} (SCREEN\+\_\+\+WIDTH, SCREEN\+\_\+\+HEIGHT, \&Wire, OLED\+\_\+\+RESET)
+\item 
+\mbox{\Hypertarget{main_8cpp_a97fe6ccba624c8913659574cc228d0f4}\label{main_8cpp_a97fe6ccba624c8913659574cc228d0f4}} 
+RF24 {\bfseries radio} (CE\+\_\+\+PIN, CS\+\_\+\+PIN)
+\item 
+void \mbox{\hyperlink{main_8cpp_a37af36caa669dcfdbb75813d832bb4dc}{set\+\_\+title}} (const char title\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em set title of the displaied page and cursor to (0,10) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a8a90120116c9a28ed11a1825c819ab75}{toggle\+\_\+red}} (uint8\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em toggls the red led in one Sec with a duty cycle \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a4bdeafcc8edebfbbcb89e9311fc5b444}{toggle\+\_\+green}} (uint8\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em toggls the green led in one Sec with a duty cycle \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+void {\bfseries setup} ()
+\begin{DoxyCompactList}\small\item\em main setup loop from the esp32-\/device \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{main_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+void {\bfseries loop} ()
+\begin{DoxyCompactList}\small\item\em main loop from the esp32-\/device \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a740097df578adc0e59fe1779b29537e0}\label{main_8cpp_a740097df578adc0e59fe1779b29537e0}} 
+const uint8\+\_\+t {\bfseries num\+\_\+channels} = 128
+\item 
+\mbox{\Hypertarget{main_8cpp_a88cf61843aae33f00ad3040b141421d0}\label{main_8cpp_a88cf61843aae33f00ad3040b141421d0}} 
+uint8\+\_\+t {\bfseries values} \mbox{[}num\+\_\+channels\mbox{]}
+\item 
+\mbox{\Hypertarget{main_8cpp_a53e2c6e2bdaa86c7730eac2ea0d98409}\label{main_8cpp_a53e2c6e2bdaa86c7730eac2ea0d98409}} 
+bool {\bfseries red\+\_\+state} = false
+\item 
+\mbox{\Hypertarget{main_8cpp_ad8e915ce18eacc7e3ce893a1604d0341}\label{main_8cpp_ad8e915ce18eacc7e3ce893a1604d0341}} 
+bool {\bfseries green\+\_\+state} = false
+\item 
+\mbox{\Hypertarget{main_8cpp_a6a4ad8fbeffd9d2f0f332a561aa21150}\label{main_8cpp_a6a4ad8fbeffd9d2f0f332a561aa21150}} 
+const int {\bfseries num\+\_\+reps} = 100
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Castox 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a37af36caa669dcfdbb75813d832bb4dc}\label{main_8cpp_a37af36caa669dcfdbb75813d832bb4dc}} 
+\index{main.cpp@{main.cpp}!set\_title@{set\_title}}
+\index{set\_title@{set\_title}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{set\_title()}{set\_title()}}
+{\footnotesize\ttfamily void set\+\_\+title (\begin{DoxyParamCaption}\item[{const char}]{title\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+set title of the displaied page and cursor to (0,10) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & char\mbox{[}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_a4bdeafcc8edebfbbcb89e9311fc5b444}\label{main_8cpp_a4bdeafcc8edebfbbcb89e9311fc5b444}} 
+\index{main.cpp@{main.cpp}!toggle\_green@{toggle\_green}}
+\index{toggle\_green@{toggle\_green}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{toggle\_green()}{toggle\_green()}}
+{\footnotesize\ttfamily void toggle\+\_\+green (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{duty }\end{DoxyParamCaption})}
+
+
+
+toggls the green led in one Sec with a duty cycle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint8\+\_\+t} & duty value between 1 -\/ 100 ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_a8a90120116c9a28ed11a1825c819ab75}\label{main_8cpp_a8a90120116c9a28ed11a1825c819ab75}} 
+\index{main.cpp@{main.cpp}!toggle\_red@{toggle\_red}}
+\index{toggle\_red@{toggle\_red}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{toggle\_red()}{toggle\_red()}}
+{\footnotesize\ttfamily void toggle\+\_\+red (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{duty }\end{DoxyParamCaption})}
+
+
+
+toggls the red led in one Sec with a duty cycle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint8\+\_\+t} & duty value between 1 -\/ 100 ~\newline
+ \\
+\hline
+\end{DoxyParams}
