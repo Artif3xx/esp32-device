@@ -8,6 +8,4 @@ Simply a small device to scan Wifi networks and a small bandwith with the rf24L0
 - RF24L01
 - KY-040 (rotary encoder)
 
-## Documentation
-
-[GitHub Page](https://artif3xx.github.io/esp32-device) 
+## [Documentation](https://artif3xx.github.io/esp32-device) 
