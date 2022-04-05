@@ -197,13 +197,12 @@ void loop() {
     
     display.drawFastVLine(i, 40, values[i]/2, SSD1306_WHITE);
     display.drawFastVLine(i, 40-values[i]/2, values[i]/2, SSD1306_WHITE);
-
   }
+
   Serial.printf("\n\r"); 
   display.drawFastHLine(0, 40, 128, SSD1306_WHITE);
 
   display.display();
-
 
   delay(1000);
   toggle_red(100);
@@ -221,6 +220,10 @@ void set_title(const char title[]) {
   display.setCursor(0, 10);
 }
 
+/**
+ * @brief   toggls the red led in one Sec with a duty cycle
+ * @param   uint8_t duty  value between 1 - 100  
+ */
 void toggle_red(uint8_t duty) {
   // duty of 1 sec: 100%=1sec 50%=0,5sec
   uint8_t on_time = 10*duty;
@@ -235,6 +238,10 @@ void toggle_red(uint8_t duty) {
   delay(off_time);
 }
 
+/**
+ * @brief   toggls the green led in one Sec with a duty cycle
+ * @param   uint8_t duty  value between 1 - 100  
+ */
 void toggle_green(uint8_t duty) {
   uint8_t on_time = 10*duty;
   uint8_t off_time = 1000-on_time;
