@@ -1,13 +1,23 @@
 /**
  * @author  Castox
  * @file    main.cpp
+ * @brief   device to scan wifi and some other frequenzes. All collected stuff
+ *          will be displaied on the 0,96 zoll oled screen.
  */ 
+
+// *---------------------------*
+//  system includes
 
 #include <Arduino.h>
 
 #include <SPI.h>
 #include <Wire.h>
 #include <WiFi.h>
+
+// *---------------------------*
+//  private includes
+
+#include "Screen.h"
 
 
 // *---------------------------*
@@ -30,6 +40,7 @@
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
+Screen screen(display);
 
 // *---------------------------*
 //  RF24L01 Module initiation
@@ -84,20 +95,24 @@ void setup() {
 
   Serial.begin(115200);
 
+  
+
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
   }
-  display.setRotation(2);
+  screen.set_title("setup loop");
+  
 
   delay(20);
   toggle_green(100);
-  display.clearDisplay();
 
+  /*
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0, 0);
+  */
 
   toggle_green(100);
   WiFi.mode(WIFI_STA);
