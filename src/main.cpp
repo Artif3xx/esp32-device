@@ -18,6 +18,7 @@
 //  private includes
 
 #include "Screen.h"
+#include "WiFiScanObj.h"
 
 
 // *---------------------------*
@@ -96,7 +97,6 @@ void setup() {
   Serial.begin(115200);
 
   
-
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
     Serial.println(F("SSD1306 allocation failed"));
@@ -155,21 +155,32 @@ void loop() {
 
   // WiFi.scanNetworks will return the number of networks found
   int n = WiFi.scanNetworks();
+  WiFiScanObj obj[n-1];
   // Serial.println("scan done");
   if (n == 0) {
     display.println("no networks found");
   } else {
+
     display.print(n);
     display.println(" networks found");
     for (int i = 0; i < n; ++i) {
       // Print SSID and RSSI for each network found
       // display.print(i + 1);
       // display.print(": ");
+
+      obj[i].set_SSID(WiFi.SSID(i).c_str());
+      obj[i].set_RSSI(WiFi.RSSI(i));
+
+      
+      /*
       display.print(WiFi.SSID(i));
       display.print(" (");
       display.print(WiFi.RSSI(i));
       display.print(") ");
-      display.println((WiFi.encryptionType(i) == WIFI_AUTH_OPEN)?" ":"*");
+      */
+      // display.println((WiFi.encryptionType(i) == WIFI_AUTH_OPEN)?" ":"*");
+      display.println(WiFi.encryptionType(i));
+      
       delay(100);  
     }
   }

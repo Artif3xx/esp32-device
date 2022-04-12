@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['red_5fstate_0',['red_state',['../main_8cpp.html#a53e2c6e2bdaa86c7730eac2ea0d98409',1,'main.cpp']]]
+  ['ssid_0',['SSID',['../class_wi_fi_scan_obj.html#a8a2c98ffab880f5eac0727f8a5751d6a',1,'WiFiScanObj']]]
 ];

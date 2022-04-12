@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['esp32_20device_20documentation_0',['ESP32 Device Documentation',['../index.html',1,'']]]
+  ['display_0',['display',['../class_screen.html#a98c42dac3bbddb19819a8fda93973531',1,'Screen']]]
 ];

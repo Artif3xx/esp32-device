@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['green_5fstate_0',['green_state',['../main_8cpp.html#ad8e915ce18eacc7e3ce893a1604d0341',1,'main.cpp']]]
+  ['display_0',['display',['../class_screen.html#a98c42dac3bbddb19819a8fda93973531',1,'Screen']]]
 ];

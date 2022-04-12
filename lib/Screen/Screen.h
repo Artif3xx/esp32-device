@@ -4,6 +4,8 @@
  * @brief   functions to display the collected contend
  */ 
 
+#pragma once
+
 // *---------------------------*
 //  system includes
 
@@ -19,7 +21,7 @@ class Screen {
          * 
          * @param init_display a Adafruit_SSD1306 opbject
          */
-        Screen(Adafruit_SSD1306 init_display);
+        Screen(Adafruit_SSD1306 &init_display);
 
         /**
          * @brief Destroy the screen object
@@ -42,6 +44,6 @@ class Screen {
          * @brief main object for the display. represents the buffer of the screen
          * 
          */
-        Adafruit_SSD1306 display;
+        Adafruit_SSD1306 *display;
 
 };

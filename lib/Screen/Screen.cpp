@@ -11,13 +11,13 @@
  * 
  * @param init_display 
  */
-Screen::Screen(Adafruit_SSD1306 init_display) {
-  this->display = init_display;
-  this->display.setRotation(2);
-  this->display.clearDisplay();
-  this->display.setTextSize(1);
-  this->display.setTextColor(WHITE);
-  this->display.setCursor(0, 0);
+Screen::Screen(Adafruit_SSD1306 &init_display) {
+  this->display = &init_display;
+  this->display->setRotation(2);
+  this->display->clearDisplay();
+  this->display->setTextSize(1);
+  this->display->setTextColor(WHITE);
+  this->display->setCursor(0, 0);
 }
 
 /**
@@ -25,8 +25,8 @@ Screen::Screen(Adafruit_SSD1306 init_display) {
  * 
  */
 Screen::~Screen() {
-  this->display.clearDisplay();
-  this->display.display();  
+  this->display->clearDisplay();
+  this->display->display();  
 }
 
 /**
@@ -34,11 +34,11 @@ Screen::~Screen() {
  * @param   const char[]
  */
 void Screen::set_title(const char title[]) {
-  this->display.setCursor(0, 0);
-  this->display.println(title);
+  this->display->setCursor(0, 0);
+  this->display->println(title);
   // draw a Line under the heading. One Pixel high
-  this->display.drawFastHLine(0, 8, 128, SSD1306_WHITE);
-  this->display.display();
+  this->display->drawFastHLine(0, 8, 128, SSD1306_WHITE);
+  this->display->display();
 }
 
 void print_content() {
