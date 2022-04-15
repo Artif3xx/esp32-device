@@ -11,7 +11,6 @@
 #include <Arduino.h>
 
 #include <SPI.h>
-#include <Wire.h>
 #include <WiFi.h>
 
 // *---------------------------*
@@ -22,26 +21,10 @@
 
 
 // *---------------------------*
-//  OLED display initiation
+//  Screen initiation
 // *---------------------------*
 
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-
-#define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 64 // OLED display height, in pixels
-
-// Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
-// The pins for I2C are defined by the Wire-library. 
-// On an arduino UNO:       A4(SDA), A5(SCL)
-// On an arduino MEGA 2560: 20(SDA), 21(SCL)
-// On an arduino LEONARDO:   2(SDA),  3(SCL), ...
-#define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
-#define SCREEN_ADDRESS 0x3C //< See datasheet for Address; 0x3D for 128x64, 0x3C for 128x32
-
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-
-Screen screen(display);
+Screen screen;
 
 // *---------------------------*
 //  RF24L01 Module initiation
@@ -80,7 +63,6 @@ bool green_state = false;
 //  Function declaration
 // *---------------------------* 
 
-void set_title(const char title[]);
 void toggle_red(uint8_t duty);
 void toggle_green(uint8_t duty);
 
@@ -88,6 +70,7 @@ void toggle_green(uint8_t duty);
  * @brief   main setup loop from the esp32-device
  */
 void setup() {
+
   pinMode(LED_RED, OUTPUT);
   pinMode(LED_GREEN, OUTPUT);
 
@@ -98,7 +81,7 @@ void setup() {
 
   
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
-  if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
+  if(!screen.get_display()->begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
   }
@@ -119,9 +102,9 @@ void setup() {
   WiFi.disconnect();
   delay(25);
 
-  display.setCursor(30, 30);
-  display.println("Setup Done!");
-  display.display();
+  screen.get_display()->setCursor(30, 30);
+  screen.get_display()->println("Setup Done!");
+  screen.get_display()->display();
   delay(25);
 
   toggle_green(100);
@@ -134,7 +117,7 @@ void setup() {
 
   // clear display befor sneding new data to display
   // otherwise the pixels will overlap
-  display.clearDisplay();
+  screen.get_display()->clearDisplay();
 
   toggle_red(100);
   toggle_green(50);
@@ -148,21 +131,21 @@ const int num_reps = 100;
  */
 void loop() {
   // create a little underlined title
-  display.clearDisplay();
+  screen.get_display()->clearDisplay();
 
   toggle_green(100);
-  set_title("WiFi Scan");
+  screen.set_title("WiFi Scan");
 
   // WiFi.scanNetworks will return the number of networks found
   int n = WiFi.scanNetworks();
   WiFiScanObj obj[n-1];
   // Serial.println("scan done");
   if (n == 0) {
-    display.println("no networks found");
+    screen.get_display()->println("no networks found");
   } else {
 
-    display.print(n);
-    display.println(" networks found");
+    screen.get_display()->print(n);
+    screen.get_display()->println(" networks found");
     for (int i = 0; i < n; ++i) {
       // Print SSID and RSSI for each network found
       // display.print(i + 1);
@@ -179,18 +162,18 @@ void loop() {
       display.print(") ");
       */
       // display.println((WiFi.encryptionType(i) == WIFI_AUTH_OPEN)?" ":"*");
-      display.println(WiFi.encryptionType(i));
+      screen.get_display()->println(WiFi.encryptionType(i));
       
       delay(100);  
     }
   }
 
-  display.display();
+  screen.get_display()->display();
   delay(1000);
   toggle_green(100);
   
-  display.clearDisplay();
-  set_title("RF24L01 Scan");
+  screen.get_display()->clearDisplay();
+  screen.set_title("RF24L01 Scan");
 
   // *** RF24 SCANNING FUNCTION *** //
 
@@ -221,30 +204,20 @@ void loop() {
   for (int i = 0 ; i < num_channels ; i++) {
     Serial.printf("%x",min(0xf,values[i]&0xf));
     
-    display.drawFastVLine(i, 40, values[i]/2, SSD1306_WHITE);
-    display.drawFastVLine(i, 40-values[i]/2, values[i]/2, SSD1306_WHITE);
+    screen.get_display()->drawFastVLine(i, 40, values[i]/2, SSD1306_WHITE);
+    screen.get_display()->drawFastVLine(i, 40-values[i]/2, values[i]/2, SSD1306_WHITE);
   }
 
   Serial.printf("\n\r"); 
-  display.drawFastHLine(0, 40, 128, SSD1306_WHITE);
+  screen.get_display()->drawFastHLine(0, 40, 128, SSD1306_WHITE);
 
-  display.display();
+  screen.get_display()->display();
 
   delay(1000);
   toggle_red(100);
 
 }
 
-/**
- * @brief   set title of the displaied page and cursor to (0,10)
- * @param   const char[]
- */
-void set_title(const char title[]) {
-  display.setCursor(0, 0);
-  display.println(title);
-  display.drawFastHLine(0, 8, 128, SSD1306_WHITE);
-  display.setCursor(0, 10);
-}
 
 /**
  * @brief   toggls the red led in one Sec with a duty cycle
