@@ -1,6 +1,6 @@
 /**
  * @author  Castox
- * @file    WiFiScan.cpp
+ * @file    WiFiScanObject.h
  * @brief   
  */
 
@@ -9,20 +9,8 @@
 
 #include <string>
 
-class WiFiScanObj {
+class WiFiScanObject {
     public:
-        /**
-         * @brief Construct a new Wi Fi Scan Obj object
-         * 
-         */
-        WiFiScanObj();
-
-        /**
-         * @brief Destroy the Wi Fi Scan object
-         * 
-         */
-        ~WiFiScanObj();
-
         /**
          * @brief get function for SSID variable
          * 
@@ -54,13 +42,13 @@ class WiFiScanObj {
     private:
 
         /**
-         * @brief SSID name from the WiFiScanObj
+         * @brief SSID name from the WiFiScanObject
          * 
          */
         std::string SSID;
 
         /**
-         * @brief RSSI strengh from the WiFiScanObj
+         * @brief RSSI strengh from the WiFiScanObject
          * 
          */
         int32_t RSSI;

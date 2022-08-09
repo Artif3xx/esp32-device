@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['screen_0',['Screen',['../class_screen.html',1,'']]]
+  ['myservercallbacks_0',['MyServerCallbacks',['../class_my_server_callbacks.html',1,'']]]
 ];
