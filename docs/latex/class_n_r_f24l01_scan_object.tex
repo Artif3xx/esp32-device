@@ -1,0 +1,83 @@
+\hypertarget{class_n_r_f24l01_scan_object}{}\doxysection{NRF24l01\+Scan\+Object Class Reference}
+\label{class_n_r_f24l01_scan_object}\index{NRF24l01ScanObject@{NRF24l01ScanObject}}
+
+
+Class to save the Values while scanning with the nrf24l01 module.  
+
+
+
+
+{\ttfamily \#include $<$NRF24l01\+Scan\+Object.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_n_r_f24l01_scan_object_a2fdbd7b72490b5c62574ad3c2408ffec}{set\+\_\+\+Value}} (uint8\+\_\+t channel, uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Value object. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_n_r_f24l01_scan_object_ab7bd6388b274470e066655a0f5731e47}{get\+\_\+\+Value}} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Get the Value object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_n_r_f24l01_scan_object_a5976730b9301bcc7d024c315e0a3599f}\label{class_n_r_f24l01_scan_object_a5976730b9301bcc7d024c315e0a3599f}} 
+void {\bfseries reset\+\_\+\+Values} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_n_r_f24l01_scan_object_addc0b7347fb1dc607a47f1cc0b543f38}\label{class_n_r_f24l01_scan_object_addc0b7347fb1dc607a47f1cc0b543f38}} 
+const unsigned int {\bfseries scan\+\_\+repeats} = SCAN\+\_\+\+REPEATS
+\item 
+\mbox{\Hypertarget{class_n_r_f24l01_scan_object_a4825481021236252d917d8eb6474be7f}\label{class_n_r_f24l01_scan_object_a4825481021236252d917d8eb6474be7f}} 
+const unsigned int {\bfseries num\+\_\+channels} = NUM\+\_\+\+CHANNELS
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_n_r_f24l01_scan_object_ab3380ca66247e8036f54404b7dabb2bf}\label{class_n_r_f24l01_scan_object_ab3380ca66247e8036f54404b7dabb2bf}} 
+uint8\+\_\+t {\bfseries values} \mbox{[}NUM\+\_\+\+CHANNELS\mbox{]}
+\begin{DoxyCompactList}\small\item\em uint8\+\_\+t array to save the values \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to save the Values while scanning with the nrf24l01 module. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_r_f24l01_scan_object_ab7bd6388b274470e066655a0f5731e47}\label{class_n_r_f24l01_scan_object_ab7bd6388b274470e066655a0f5731e47}} 
+\index{NRF24l01ScanObject@{NRF24l01ScanObject}!get\_Value@{get\_Value}}
+\index{get\_Value@{get\_Value}!NRF24l01ScanObject@{NRF24l01ScanObject}}
+\doxysubsubsection{\texorpdfstring{get\_Value()}{get\_Value()}}
+{\footnotesize\ttfamily uint8\+\_\+t NRF24l01\+Scan\+Object\+::get\+\_\+\+Value (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+
+
+Get the Value object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & requested channel for the value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t saved value in the channel 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_r_f24l01_scan_object_a2fdbd7b72490b5c62574ad3c2408ffec}\label{class_n_r_f24l01_scan_object_a2fdbd7b72490b5c62574ad3c2408ffec}} 
+\index{NRF24l01ScanObject@{NRF24l01ScanObject}!set\_Value@{set\_Value}}
+\index{set\_Value@{set\_Value}!NRF24l01ScanObject@{NRF24l01ScanObject}}
+\doxysubsubsection{\texorpdfstring{set\_Value()}{set\_Value()}}
+{\footnotesize\ttfamily void NRF24l01\+Scan\+Object\+::set\+\_\+\+Value (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Value object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+NRF24l01\+Scan\+Object/src/NRF24l01\+Scan\+Object.\+h\item 
+lib/\+NRF24l01\+Scan\+Object/src/NRF24l01\+Scan\+Object.\+cpp\end{DoxyCompactItemize}

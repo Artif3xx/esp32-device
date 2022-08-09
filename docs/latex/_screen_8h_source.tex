@@ -1,0 +1,54 @@
+\hypertarget{_screen_8h_source}{}\doxysection{Screen.\+h}
+\label{_screen_8h_source}\index{lib/Screen/src/Screen.h@{lib/Screen/src/Screen.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{// *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*}}
+\DoxyCodeLine{10 \textcolor{comment}{//  system includes}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <Adafruit\_GFX.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <Adafruit\_SSD1306.h>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <Wire.h>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define SCREEN\_WIDTH 128 }\textcolor{comment}{// OLED display width, in pixels}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define SCREEN\_HEIGHT 64 }\textcolor{comment}{// OLED display height, in pixels}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)}}
+\DoxyCodeLine{21 \textcolor{comment}{// The pins for I2C are defined by the Wire-\/library. }}
+\DoxyCodeLine{22 \textcolor{comment}{// On an arduino UNO:       A4(SDA), A5(SCL)}}
+\DoxyCodeLine{23 \textcolor{comment}{// On an arduino MEGA 2560: 20(SDA), 21(SCL)}}
+\DoxyCodeLine{24 \textcolor{comment}{// On an arduino LEONARDO:   2(SDA),  3(SCL), ...}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define OLED\_RESET -\/1 }\textcolor{comment}{// Reset pin \# (or -\/1 if sharing Arduino reset pin)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define SCREEN\_ADDRESS 0x3C }\textcolor{comment}{//< See datasheet for Address; 0x3D for 128x64, 0x3C for 128x32}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{class_screen}{Screen}} \{}
+\DoxyCodeLine{34     \textcolor{keyword}{public}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{40         \mbox{\hyperlink{class_screen_ae7576476fc6e6a6eaa66389fdc41fe72}{Screen}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{46         \mbox{\hyperlink{class_screen_a4243bc17596af96415b09ac48205676d}{\string~Screen}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{54         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_screen_aa5ada325f6b221fc327e3076e8240b9d}{begin}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{61         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_screen_a8c76a9a64e6223085602de0d393e8d55}{set\_Title}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} title[]);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{67         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_screen_aa2ba20ddbd13c21b97d9d7f1c37deac1}{set\_Title\_Icon}}();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{73         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_screen_a248909c822e67da68b35d91691159c6e}{print\_Content}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} content[]);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{79         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_screen_a8f7399e9bba3e2a6b7831c4e9496da3f}{clear\_Screen}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{89         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_screen_a4f657593e2141ef5cb1d61539d39a6b7}{draw\_vertical\_Line}}(int16\_t x, int16\_t y, int16\_t h, uint16\_t color);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{99         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_screen_aca22a9342b8f8e3c6204c6df4d7e19c9}{draw\_horizontal\_Line}}(int16\_t x, int16\_t y, int16\_t h, uint16\_t color);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{keyword}{private}:}
+\DoxyCodeLine{106         Adafruit\_SSD1306 *\mbox{\hyperlink{class_screen_a5bcab91bfe2b15903e9a61378770cb65}{display}};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \};}
+
+\end{DoxyCode}

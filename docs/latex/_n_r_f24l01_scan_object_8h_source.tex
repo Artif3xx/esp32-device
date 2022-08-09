@@ -1,0 +1,33 @@
+\hypertarget{_n_r_f24l01_scan_object_8h_source}{}\doxysection{NRF24l01\+Scan\+Object.\+h}
+\label{_n_r_f24l01_scan_object_8h_source}\index{lib/NRF24l01ScanObject/src/NRF24l01ScanObject.h@{lib/NRF24l01ScanObject/src/NRF24l01ScanObject.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#pragma once }}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <Arduino.h>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{// number of channels that can be recorded}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define NUM\_CHANNELS 128}}
+\DoxyCodeLine{13 \textcolor{comment}{// how often the scan should repeat}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define SCAN\_REPEATS 100}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_n_r_f24l01_scan_object}{NRF24l01ScanObject}} \{}
+\DoxyCodeLine{21     \textcolor{keyword}{public}:}
+\DoxyCodeLine{28         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_n_r_f24l01_scan_object_a2fdbd7b72490b5c62574ad3c2408ffec}{set\_Value}}(uint8\_t channel, uint8\_t value);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{36         uint8\_t \mbox{\hyperlink{class_n_r_f24l01_scan_object_ab7bd6388b274470e066655a0f5731e47}{get\_Value}}(uint8\_t channel);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \textcolor{keywordtype}{void} reset\_Values();}
+\DoxyCodeLine{39         }
+\DoxyCodeLine{40         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} scan\_repeats = SCAN\_REPEATS;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} num\_channels = NUM\_CHANNELS;}
+\DoxyCodeLine{43     }
+\DoxyCodeLine{44     \textcolor{keyword}{private}:}
+\DoxyCodeLine{49         uint8\_t \mbox{\hyperlink{class_n_r_f24l01_scan_object_ab3380ca66247e8036f54404b7dabb2bf}{values}}[NUM\_CHANNELS];}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         }
+\DoxyCodeLine{52 \};}
+
+\end{DoxyCode}

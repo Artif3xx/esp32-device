@@ -1,0 +1,152 @@
+\hypertarget{class_screen}{}\doxysection{Screen Class Reference}
+\label{class_screen}\index{Screen@{Screen}}
+
+
+\mbox{\hyperlink{class_screen}{Screen}} class to manage content.  
+
+
+
+
+{\ttfamily \#include $<$Screen.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_screen_ae7576476fc6e6a6eaa66389fdc41fe72}{Screen}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new sceen object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_screen_a4243bc17596af96415b09ac48205676d}{$\sim$\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the screen object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_screen_aa5ada325f6b221fc327e3076e8240b9d}{begin}} (void)
+\begin{DoxyCompactList}\small\item\em init function for the Adafruit Display Class \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_screen_a8c76a9a64e6223085602de0d393e8d55}{set\+\_\+\+Title}} (const char title\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Set the title object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_screen_aa2ba20ddbd13c21b97d9d7f1c37deac1}\label{class_screen_aa2ba20ddbd13c21b97d9d7f1c37deac1}} 
+void {\bfseries set\+\_\+\+Title\+\_\+\+Icon} ()
+\begin{DoxyCompactList}\small\item\em Set the title icon object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_screen_a248909c822e67da68b35d91691159c6e}\label{class_screen_a248909c822e67da68b35d91691159c6e}} 
+void {\bfseries print\+\_\+\+Content} (const char content\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em print Content under the title \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_screen_a8f7399e9bba3e2a6b7831c4e9496da3f}\label{class_screen_a8f7399e9bba3e2a6b7831c4e9496da3f}} 
+void {\bfseries clear\+\_\+\+Screen} ()
+\begin{DoxyCompactList}\small\item\em clear the buffer of the screen \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_screen_a4f657593e2141ef5cb1d61539d39a6b7}{draw\+\_\+vertical\+\_\+\+Line}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t h, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em function to draw a vertical line \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_screen_aca22a9342b8f8e3c6204c6df4d7e19c9}{draw\+\_\+horizontal\+\_\+\+Line}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t h, uint16\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em function to draw a horizontal line \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_screen_a5bcab91bfe2b15903e9a61378770cb65}\label{class_screen_a5bcab91bfe2b15903e9a61378770cb65}} 
+Adafruit\+\_\+\+SSD1306 $\ast$ {\bfseries display}
+\begin{DoxyCompactList}\small\item\em main object for the display. represents the buffer of the screen \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_screen}{Screen}} class to manage content. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_screen_ae7576476fc6e6a6eaa66389fdc41fe72}\label{class_screen_ae7576476fc6e6a6eaa66389fdc41fe72}} 
+\index{Screen@{Screen}!Screen@{Screen}}
+\index{Screen@{Screen}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{Screen()}{Screen()}}
+{\footnotesize\ttfamily Screen\+::\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new sceen object. 
+
+Construct a new \mbox{\hyperlink{class_screen_ae7576476fc6e6a6eaa66389fdc41fe72}{Screen\+::\+Screen}} object. \mbox{\Hypertarget{class_screen_a4243bc17596af96415b09ac48205676d}\label{class_screen_a4243bc17596af96415b09ac48205676d}} 
+\index{Screen@{Screen}!````~Screen@{$\sim$Screen}}
+\index{````~Screen@{$\sim$Screen}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{$\sim$Screen()}{~Screen()}}
+{\footnotesize\ttfamily Screen\+::$\sim$\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the screen object. 
+
+Destroy the \mbox{\hyperlink{class_screen}{Screen}}\+:\+: \mbox{\hyperlink{class_screen}{Screen}} object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_screen_aa5ada325f6b221fc327e3076e8240b9d}\label{class_screen_aa5ada325f6b221fc327e3076e8240b9d}} 
+\index{Screen@{Screen}!begin@{begin}}
+\index{begin@{begin}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily bool Screen\+::begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+init function for the Adafruit Display Class 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_screen_aca22a9342b8f8e3c6204c6df4d7e19c9}\label{class_screen_aca22a9342b8f8e3c6204c6df4d7e19c9}} 
+\index{Screen@{Screen}!draw\_horizontal\_Line@{draw\_horizontal\_Line}}
+\index{draw\_horizontal\_Line@{draw\_horizontal\_Line}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{draw\_horizontal\_Line()}{draw\_horizontal\_Line()}}
+{\footnotesize\ttfamily void Screen\+::draw\+\_\+horizontal\+\_\+\+Line (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{h,  }\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+function to draw a horizontal line 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x position where to start \\
+\hline
+{\em y} & y position where to start \\
+\hline
+{\em h} & hight, how long the line should be \\
+\hline
+{\em color} & in which color the line should be printed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_screen_a4f657593e2141ef5cb1d61539d39a6b7}\label{class_screen_a4f657593e2141ef5cb1d61539d39a6b7}} 
+\index{Screen@{Screen}!draw\_vertical\_Line@{draw\_vertical\_Line}}
+\index{draw\_vertical\_Line@{draw\_vertical\_Line}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{draw\_vertical\_Line()}{draw\_vertical\_Line()}}
+{\footnotesize\ttfamily void Screen\+::draw\+\_\+vertical\+\_\+\+Line (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{h,  }\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+function to draw a vertical line 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x position where to start \\
+\hline
+{\em y} & y position where to start \\
+\hline
+{\em h} & hight, how long the line should be \\
+\hline
+{\em color} & in which color the line should be printed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_screen_a8c76a9a64e6223085602de0d393e8d55}\label{class_screen_a8c76a9a64e6223085602de0d393e8d55}} 
+\index{Screen@{Screen}!set\_Title@{set\_Title}}
+\index{set\_Title@{set\_Title}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{set\_Title()}{set\_Title()}}
+{\footnotesize\ttfamily void Screen\+::set\+\_\+\+Title (\begin{DoxyParamCaption}\item[{const char}]{title\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Set the title object. 
+
+set title of the displaied page and cursor to (0,10)
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & \\
+\hline
+{\em const} & char\mbox{[}\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Screen/src/Screen.\+h\item 
+lib/\+Screen/src/Screen.\+cpp\end{DoxyCompactItemize}

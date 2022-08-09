@@ -1,0 +1,11 @@
+digraph "lib/NRF24l01ScanObject/src"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_4359f836d6cb37ca5dcadd9c7ee0590f {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="NRF24l01ScanObject", fontname="Helvetica", fontsize="10", URL="dir_4359f836d6cb37ca5dcadd9c7ee0590f.html"]
+  dir_213dadd8851f10cc591dfadccccb2231 [shape=box, label="src", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_213dadd8851f10cc591dfadccccb2231.html"];
+  }
+}

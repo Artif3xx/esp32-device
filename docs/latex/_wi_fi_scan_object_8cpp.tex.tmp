@@ -1,0 +1,20 @@
+\hypertarget{_wi_fi_scan_object_8cpp}{}\doxysection{lib/\+Wi\+Fi\+Scan\+Object/src/\+Wi\+Fi\+Scan\+Object.cpp File Reference}
+\label{_wi_fi_scan_object_8cpp}\index{lib/WiFiScanObject/src/WiFiScanObject.cpp@{lib/WiFiScanObject/src/WiFiScanObject.cpp}}
+
+
+~\newline
+  
+
+
+{\ttfamily \#include $<$Wi\+Fi\+Scan\+Object.\+h$>$}\newline
+Include dependency graph for Wi\+Fi\+Scan\+Object.\+cpp\+:
+% FIG 0
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+Castox 
+\end{DoxyAuthor}
