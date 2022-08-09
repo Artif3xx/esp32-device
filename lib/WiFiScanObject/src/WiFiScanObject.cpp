@@ -4,7 +4,7 @@
  * @brief   
  */
 
-#include "WiFiScanObj.h"
+#include "WiFiScanObject.h"
 
 WiFiScanObj::WiFiScanObj() {
 

@@ -17,7 +17,7 @@
 //  private includes
 
 #include "Screen.h"
-#include "WiFiScanObj.h"
+#include "WiFiScanObject.h"
 
 
 // *---------------------------*
@@ -70,41 +70,32 @@ void toggle_green(uint8_t duty);
  * @brief   main setup loop from the esp32-device
  */
 void setup() {
-
   pinMode(LED_RED, OUTPUT);
   pinMode(LED_GREEN, OUTPUT);
 
   toggle_red(100); // duty cicly = 100%
   toggle_green(100); // duty cicly = 100%
 
-  Serial.begin(115200);
-
+  Serial.begin(9600);
+  Serial.printf("init Startup Loop ...");
   
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
-  if(!screen.get_display()->begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
+  if(!screen.begin()) {
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
   }
-  screen.set_title("setup loop");
+  screen.set_Title("setup loop");
   
 
   delay(20);
   toggle_green(100);
-
-  /*
-  display.setTextSize(1);
-  display.setTextColor(WHITE);
-  display.setCursor(0, 0);
-  */
 
   toggle_green(100);
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
   delay(25);
 
-  screen.get_display()->setCursor(30, 30);
-  screen.get_display()->println("Setup Done!");
-  screen.get_display()->display();
+  screen.print_Content("Setup Done!");
   delay(25);
 
   toggle_green(100);
@@ -117,7 +108,7 @@ void setup() {
 
   // clear display befor sneding new data to display
   // otherwise the pixels will overlap
-  screen.get_display()->clearDisplay();
+  screen.clear_Screen();
 
   toggle_red(100);
   toggle_green(50);
@@ -131,29 +122,29 @@ const int num_reps = 100;
  */
 void loop() {
   // create a little underlined title
-  screen.get_display()->clearDisplay();
+  screen.clear_Screen();
 
   toggle_green(100);
-  screen.set_title("WiFi Scan");
+  screen.set_Title("WiFi Scan");
 
   // WiFi.scanNetworks will return the number of networks found
   int n = WiFi.scanNetworks();
   WiFiScanObj obj[n-1];
   // Serial.println("scan done");
   if (n == 0) {
-    screen.get_display()->println("no networks found");
+    screen.print_Content("no networks found");
   } else {
-
-    screen.get_display()->print(n);
-    screen.get_display()->println(" networks found");
-    for (int i = 0; i < n; ++i) {
+    char n_buff[sizeof(n)];
+    itoa(n, n_buff, 10);
+    screen.print_Content(n_buff);
+    screen.print_Content(" networks found");
+    for (uint8_t i = 0; i < n; ++i) {
       // Print SSID and RSSI for each network found
       // display.print(i + 1);
       // display.print(": ");
 
-      obj[i].set_SSID(WiFi.SSID(i).c_str());
-      obj[i].set_RSSI(WiFi.RSSI(i));
-
+      // obj[i].set_SSID(WiFi.SSID(i).c_str());
+      // obj[i].set_RSSI(WiFi.RSSI(i));
       
       /*
       display.print(WiFi.SSID(i));
@@ -162,18 +153,19 @@ void loop() {
       display.print(") ");
       */
       // display.println((WiFi.encryptionType(i) == WIFI_AUTH_OPEN)?" ":"*");
-      screen.get_display()->println(WiFi.encryptionType(i));
+      
+      // screen.print_Content(WiFi.encryptionType(i).c_str());
+      screen.print_Content("Encryption Type");
       
       delay(100);  
     }
   }
 
-  screen.get_display()->display();
   delay(1000);
   toggle_green(100);
   
-  screen.get_display()->clearDisplay();
-  screen.set_title("RF24L01 Scan");
+  screen.clear_Screen();
+  screen.set_Title("RF24L01 Scan");
 
   // *** RF24 SCANNING FUNCTION *** //
 
@@ -182,8 +174,7 @@ void loop() {
 
   // Scan all channels num_reps times
   int rep_counter = num_reps;
-  while (rep_counter--)
-  {
+  while (rep_counter--) {
     int i = num_channels;
     while (i--) {
       // Select this channel
@@ -204,14 +195,12 @@ void loop() {
   for (int i = 0 ; i < num_channels ; i++) {
     Serial.printf("%x",min(0xf,values[i]&0xf));
     
-    screen.get_display()->drawFastVLine(i, 40, values[i]/2, SSD1306_WHITE);
-    screen.get_display()->drawFastVLine(i, 40-values[i]/2, values[i]/2, SSD1306_WHITE);
+    screen.draw_vertical_Line(i, 40, values[i]/2, SSD1306_WHITE);
+    screen.draw_vertical_Line(i, 40-values[i]/2, values[i]/2, SSD1306_WHITE);
   }
 
   Serial.printf("\n\r"); 
-  screen.get_display()->drawFastHLine(0, 40, 128, SSD1306_WHITE);
-
-  screen.get_display()->display();
+  screen.draw_horizontal_Line(0, 40, 128, SSD1306_WHITE);
 
   delay(1000);
   toggle_red(100);
