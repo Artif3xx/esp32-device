@@ -14,3 +14,7 @@ doxygen:
 	sed -i -re '/^OUTPUT_DIRECTORY/  s/=(.*)/& doc/' Doxygen
 	sed -i -re '/^ABREVIATE_BRIEF/ s/=/&"The $$name class"   "The $$name widget"  "The $$name file"   is  provides  specifies  contains  represents  a  an  the/' Doxygen
 	doxygen DOXYFILE
+
+clean_docs:
+	rm -r docs
+	mkdir docs
